@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hospital Management System</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Hospital Appointment & Patient Management System</h1>
+      <nav>
+        <button onclick="loadEntity('departments')">Departments</button>
+        <button onclick="loadEntity('doctors')">Doctors</button>
+        <button onclick="loadEntity('patients')">Patients</button>
+        <button onclick="loadEntity('appointments')">Appointments</button>
+      </nav>
+    </header>
+
+    <main>
+      <div class="toolbar">
+        <h2 id="pageTitle">Departments</h2>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search..."
+          onkeyup="renderTable()"
+        />
+        <button onclick="openForm()">Add New</button>
+      </div>
+
+      <div id="tableContainer"></div>
+
+      <div id="formContainer" class="hidden">
+        <h3 id="formTitle">Add</h3>
+        <form id="entityForm"></form>
+        <div class="form-buttons">
+          <button onclick="save()">Save</button>
+          <button onclick="closeForm()">Cancel</button>
+        </div>
+      </div>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
